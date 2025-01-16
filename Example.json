@@ -1,0 +1,220 @@
+{
+  "last_node_id": 15,
+  "last_link_id": 14,
+  "nodes": [
+    {
+      "id": 15,
+      "type": "CleanFolders",
+      "pos": [
+        1179.648193359375,
+        803.1049194335938
+      ],
+      "size": [
+        210,
+        54
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "output_path",
+          "type": "STRING",
+          "link": 13,
+          "widget": {
+            "name": "output_path"
+          },
+          "label": "output_path"
+        },
+        {
+          "name": "input_path",
+          "type": "STRING",
+          "link": 14,
+          "widget": {
+            "name": "input_path"
+          },
+          "label": "input_path"
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "CleanFolders"
+      },
+      "widgets_values": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 11,
+      "type": "CompressImages",
+      "pos": [
+        894.0198974609375,
+        745.897705078125
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9,
+          "label": "images"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "temp_dir",
+          "type": "STRING",
+          "links": [
+            13
+          ],
+          "slot_index": 0,
+          "label": "temp_dir"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CompressImages"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "ImageInvert",
+      "pos": [
+        698.370849609375,
+        745.5828247070312
+      ],
+      "size": [
+        140,
+        26
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 8,
+          "label": "image"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ],
+          "slot_index": 0,
+          "label": "IMAGE"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageInvert"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 9,
+      "type": "UnzipToInput",
+      "pos": [
+        430.0738220214844,
+        798.1468505859375
+      ],
+      "size": [
+        210,
+        78
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            8
+          ],
+          "slot_index": 0,
+          "shape": 6,
+          "label": "images"
+        },
+        {
+          "name": "folder",
+          "type": "STRING",
+          "links": [
+            14
+          ],
+          "slot_index": 1,
+          "label": "folder"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UnzipToInput"
+      },
+      "widgets_values": [
+        "input/file.zip"
+      ]
+    }
+  ],
+  "links": [
+    [
+      8,
+      9,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      9,
+      13,
+      0,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      11,
+      0,
+      15,
+      0,
+      "STRING"
+    ],
+    [
+      14,
+      9,
+      1,
+      15,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8769226950000008,
+      "offset": [
+        -24.799331551459204,
+        -332.5597278000348
+      ]
+    },
+    "groupNodes": {},
+    "node_versions": {
+      "comfy-core": "0.3.10"
+    }
+  },
+  "version": 0.4
+}
