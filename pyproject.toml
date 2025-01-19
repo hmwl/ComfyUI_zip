@@ -1,0 +1,14 @@
+[project]
+name = "comfyui_zip"
+description = "ComfyUI zip package image processing"
+version = "1.0.0"
+license = {file = "LICENSE"}
+
+[project.urls]
+Repository = "https://github.com/hmwl/ComfyUI_zip"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "hmwl"
+DisplayName = "ComfyUI_zip"
+Icon = ""
